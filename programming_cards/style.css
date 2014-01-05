@@ -1,0 +1,54 @@
+html, body { 
+height: 100%; 
+width: 100%; 
+margin: 0px; 
+font-family: sans-serif;
+}
+
+header {
+	height: 29px;
+	background-color: #000033;
+	color: #ADCFE6;
+}
+
+h1 {
+	display: inline;
+	font-weight: normal;
+	font-family: monospace;
+}
+
+#upload {
+	display: inline;
+	margin: 5px;
+	float: right;
+	margin-top: 1px;
+	color: #ADCFE6;
+	size: 20px;
+}
+
+div.static_card, div.card {
+	width: 85%;
+	height: 530px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	margin: auto;
+	margin-top: 20px;
+	color: black;
+	box-shadow: 10px 10px 5px #888888;
+	background-color: #ADCFE6;
+}
+
+#navigation {
+	width: 10%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.hidden {
+	display: none;
+}
+
+.card_text {
+	margin: 15px;
+}
