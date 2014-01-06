@@ -20,6 +20,14 @@
 		<select name='topic'>
 			<?php get_topic_options($link); ?>
 		</select> </br>
+		<label for='difficulty'>Difficulty: </label>
+		<select name='difficulty'>
+			<option value='1'>Really Easy</option>
+			<option value='2'>Easy</option>
+			<option value='3'>Medium</option>
+			<option value='4'>Hard</option>
+			<option value='5'>Really Hard</option>
+		</select> </br>
 		<input type="submit">
 	</form>
 	
