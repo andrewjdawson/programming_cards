@@ -13,7 +13,7 @@
 	<body>
 		<header>
 			<h1>PROGRAMMING CARDS</h1>
-			<a href='upload.php' id='upload'>Upload</a>
+			<a href='upload.php' id='upload'>Publish A Flash Card</a>
 			
 			<form id='topic_selector' method='GET' action='index.php'>
 				<select name='topic'>
@@ -24,9 +24,15 @@
 		</header>
 			
 		<div id='navigation'>
-			<button id='back'>&#60;</button>
+			<button id='back' class='new_card'>&#60;</button>
 			<button id='flip_card'>Flip Card</button>
-			<button id='forward'>&#62;</button>
+			<button id='forward' class='new_card'>&#62;</button>
+		</div>
+		
+		<div id='voting_tool'>
+			<button id='up_vote'>Up Vote</button>
+			<div id='curr_rating'></div>
+			<button id='down_vote'>Down Vote</button>
 		</div>
 		
 		<?php
@@ -35,7 +41,6 @@
 		?>
 		
 		<script src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
-		<script src='jquery.validate.min.js'></script>
 		<script src='interactions.js'></script>
 	</body>
 </html>	

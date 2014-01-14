@@ -21,6 +21,7 @@ h1 {
 	display: inline;
 	margin: 5px;
 	float: right;
+	font-weight: bold;
 	margin-top: 1px;
 	color: #ADCFE6;
 	size: 20px;
@@ -51,4 +52,8 @@ div.static_card, div.card {
 
 .card_text {
 	margin: 15px;
+}
+
+#voting_tool {
+	float: left;
 }

@@ -12,10 +12,10 @@
 	<body>
 	
 	<form id='uploader' action='card_upload.php' method='POST'>
-		<label for='term'>Term: </label>
-		<input id='term' type='text' name='term'> </br>
+		<label for='question'>Question: </label>
+		<input id='question' type='text' name='question' required='required'> </br>
 		<label for='answer'>Answer: </label>
-		<input id='answer' type='text' name='answer'> </br>
+		<input id='answer' type='text' name='answer' required='required'> </br>
 		<label for='topic'>Topic: </label>
 		<select name='topic'>
 			<?php get_topic_options($link); ?>
