@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var maxIndex = $('.card').length - 1;
 	//defult page should display the first card
 	$('div.card:eq(' + currCard + ')').removeClass('hidden');
+	echo_rating();
 	
 	//when flip card button is clicked card flips
 	$('#flip_card').click(function() {
@@ -19,6 +20,7 @@ $(document).ready(function() {
 			currCard++;
 			$('div.card:eq(' + currCard + ')').removeClass('hidden');
 		}
+		echo_rating();
 	});
 	
 	//when back arrow is clicked display previous card
@@ -28,8 +30,10 @@ $(document).ready(function() {
 			currCard--;
 			$('div.card:eq(' + currCard + ')').removeClass('hidden');
 		}
+		echo_rating();
 	});
 	
+	//when upvote button is clicked increment the rating in the database and increment the display value of rating
 	$('#up_vote').click (function() {
 		$.post('ajax.php', 
 		{
@@ -43,6 +47,7 @@ $(document).ready(function() {
 		});
 	});
 	
+	//when downvote button is clicked decrement the rating in the database and decrement the display value of rating
 	$('#down_vote').click (function() {
 		$.post('ajax.php', 
 		{
@@ -55,4 +60,17 @@ $(document).ready(function() {
 			$('#curr_rating').html(rating['rating']);
 		});
 	});
+	
+	//populates the rating display div with the rating of the currently visiable card
+	function echo_rating() {
+		$.post('ajax.php', 
+		{
+			task : 'show_rating',
+			id : $('div.card:visible').attr('id')
+		}, 
+		function(data) {
+			var rating = jQuery.parseJSON(data);
+			$('#curr_rating').html(rating['rating']);
+		});
+	}
 }); 

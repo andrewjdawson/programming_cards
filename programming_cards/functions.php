@@ -26,6 +26,10 @@
 		}
 	}
 	
+	function delete_negatives($link) {
+		mysqli_query($link, 'DELETE FROM cards WHERE rating < 0') or die(mysqli_error($link));
+	}
+	
 	function get_topic_options($link) {
 		$r = mysqli_query($link, 'SELECT topic FROM topics') or die(mysqli_error($link));
 		if($r && mysqli_num_rows($r)) {
@@ -68,13 +72,6 @@
 					<p class='card_text'>Sorry but no cards have been published for this topic</p>
 				</div>
 			<?php
-		}
-	}
-	
-	function get_rating($link, $id) {
-		$q = mysqli_query($link, "SELECT rating FROM cards WHERE id = $id") or die(mysqli_error($link));
-		while($row = mysqli_fetch_array($q)) {
-			return $row['rating'];
 		}
 	}
 ?>

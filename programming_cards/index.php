@@ -7,6 +7,7 @@
 			require 'functions.php';
 			$link = connect();
 			$db = initialize_database($link);
+			delete_negatives($link);
 		?>
 	</head>
 	
