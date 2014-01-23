@@ -2,12 +2,13 @@
 <html>
 	<head>
 		<title>Programming Cards</title>
-		<link rel='stylesheet' type='text/css' href='style.css'>
+		<link rel='stylesheet' type='text/css' href='index_style.css'>
 		<?php
 			require 'functions.php';
 			$link = connect();
 			$db = initialize_database($link);
-			delete_negatives($link);
+			//every time the index page is loaded delete all the cards with a rating of less than 5 from the database
+			delete_bad_ratings($link);
 		?>
 	</head>
 	
@@ -37,6 +38,8 @@
 		</div>
 		
 		<?php
+			//if a topic_id has been set generate the cards html output.
+			//static cards are generated if no cards have been published or if no topic_id has been set
 			$topic_id = get_topic_id($link);
 			if($topic_id != null) { get_cards_html($link, $topic_id); }
 		?>

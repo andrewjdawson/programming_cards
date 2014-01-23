@@ -57,3 +57,11 @@ div.static_card, div.card {
 #voting_tool {
 	float: left;
 }
+
+.card_text {
+   white-space: pre-wrap;
+   white-space: -moz-pre-wrap; 
+   white-space: -pre-wrap; 
+   white-space: -o-pre-wrap;
+   word-wrap: break-word;
+}

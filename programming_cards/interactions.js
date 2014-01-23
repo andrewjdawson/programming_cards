@@ -8,7 +8,7 @@ $(document).ready(function() {
 	
 	//when flip card button is clicked card flips
 	$('#flip_card').click(function() {
-		$('div.card:visible').children('p').toggleClass('hidden');
+		$('div.card:visible').children('pre').toggleClass('hidden');
 	});
 	
 	//when forward arrow is click display next card

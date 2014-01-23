@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Programming Cards</title>
+		<link rel='stylesheet' type='text/css' href='upload_style.css'>
 		<?php
 			require 'functions.php';
 			$link = connect();
@@ -12,10 +13,8 @@
 	<body>
 	
 	<form id='uploader' action='card_upload.php' method='POST'>
-		<label for='question'>Question: </label>
-		<input id='question' type='text' name='question' required='required'> </br>
-		<label for='answer'>Answer: </label>
-		<input id='answer' type='text' name='answer' required='required'> </br>
+		<textarea class='card_text'id='question' name='question' required='required' placeholder='Type Question Here (Formatting here will match formatting of card)'></textarea> </br>
+		<textarea class='card_text' id='answer' name='answer' required='required' placeholder='Type Answer Here (Formatting here will match formatting of card)'></textarea> </br>
 		<label for='topic'>Topic: </label>
 		<select name='topic'>
 			<?php get_topic_options($link); ?>
