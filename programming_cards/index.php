@@ -18,18 +18,11 @@
 			<a href='upload.php' id='upload'>Publish A Flash Card</a>
 			
 			<form id='topic_selector' method='GET' action='index.php'>
-				<select name='topic'>
-					<?php get_topic_options($link); ?>
+				<select name='topic' id='topic_selector_dropdown'>
+					<?php get_topic_options_index($link); ?>
 				</select>
-				<input type='submit' />
 			</form>
 		</header>
-			
-		<div id='navigation'>
-			<button id='back' class='new_card'>&#60;</button>
-			<button id='flip_card'>Flip Card</button>
-			<button id='forward' class='new_card'>&#62;</button>
-		</div>
 		
 		<div id='voting_tool'>
 			<button id='up_vote'>Up Vote</button>
@@ -43,6 +36,12 @@
 			$topic_id = get_topic_id($link);
 			if($topic_id != null) { get_cards_html($link, $topic_id); }
 		?>
+		
+		<div id='navigation'>
+			<button id='back' class='new_card'>&#60;</button>
+			<button id='flip_card'>Flip Card</button>
+			<button id='forward' class='new_card'>&#62;</button>
+		</div>
 		
 		<script src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
 		<script src='interactions.js'></script>

@@ -6,6 +6,14 @@ $(document).ready(function() {
 	$('div.card:eq(' + currCard + ')').removeClass('hidden');
 	echo_rating();
 	
+	//when dropdown menu value is changed submit the form
+	$('#topic_selector_dropdown').change(function() {
+		var test = $(this).val();
+		if(test != 'select') {
+			this.form.submit();
+		}
+	});
+	
 	//when flip card button is clicked card flips
 	$('#flip_card').click(function() {
 		$('div.card:visible').children('pre').toggleClass('hidden');

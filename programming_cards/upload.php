@@ -17,7 +17,7 @@
 		<textarea class='card_text' id='answer' name='answer' required='required' placeholder='Type Answer Here (Formatting here will match formatting of card)'></textarea> </br>
 		<label for='topic'>Topic: </label>
 		<select name='topic'>
-			<?php get_topic_options($link); ?>
+			<?php get_topic_options_publish($link); ?>
 		</select> </br>
 		<label for='difficulty'>Difficulty: </label>
 		<select name='difficulty'>

@@ -37,8 +37,23 @@
 		mysqli_query($link, 'DELETE FROM cards WHERE rating < -5') or die(mysqli_error($link));
 	}
 	
-	//generate html output for all the topics. The output is produced as option tags so that it can be easily used within a dropdown menu
-	function get_topic_options($link) {
+	//generate html output for all the topic options. These tags are used for the topic selection in the index page
+	function get_topic_options_index($link) {
+		$topic = $_GET['topic'];
+		$r = mysqli_query($link, 'SELECT topic FROM topics') or die(mysqli_error($link));
+		if($r && mysqli_num_rows($r)) {
+			?> <option value='select'>--Select Topic--</option> <?php
+			while($row = mysqli_fetch_array($r)) {
+			?>
+
+				<option value="<?php echo $row['topic']; ?>" <?php echo ($topic == $row['topic']) ? 'selected="selected"' : ''; ?>><?php echo $row['topic']; ?></option>
+			<?php
+			}
+		}
+	}
+	
+	//generate html ouput for all the topic options. These tags are used in the topic selection form in the publishing section
+	function get_topic_options_publish($link) {
 		$r = mysqli_query($link, 'SELECT topic FROM topics') or die(mysqli_error($link));
 		if($r && mysqli_num_rows($r)) {
 			while($row = mysqli_fetch_array($r)) {
