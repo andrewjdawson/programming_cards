@@ -1,5 +1,5 @@
 <?php
-	require 'functions.php';
+	require '../util/functions.php';
 	$link = connect();
 	$db = initialize_database($link);
 	
@@ -15,6 +15,6 @@
 		$q = 'INSERT INTO cards(topic, question, answer, difficulty) VALUES("'.$topic_id_array['id'].'", "'.$question.'", "'.$answer.'", "'.$difficulty.'")';
 		$r = mysqli_query($link, $q) or die(mysqli_error($link));
 	}
-	header('Location: index.php');
+	header('Location: ../index.php');
 	die();
 ?>

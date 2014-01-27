@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<title>Programming Cards</title>
-		<link rel='stylesheet' type='text/css' href='index_style.css'>
+		<link rel='stylesheet' type='text/css' href='css/index.css'>
 		<?php
-			require 'functions.php';
+			require 'util/functions.php';
 			$link = connect();
 			$db = initialize_database($link);
 			//every time the index page is loaded delete all the cards with a rating of less than 5 from the database
@@ -43,7 +43,7 @@
 			<button id='forward' class='new_card'>&#62;</button>
 		</div>
 		
-		<script src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
-		<script src='interactions.js'></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src='js/index.js'></script>
 	</body>
 </html>	

@@ -1,5 +1,5 @@
 <?php
-	require 'functions.php';
+	require '../util/functions.php';
 	$link = connect();
 	$db = initialize_database($link);
 	

@@ -8,8 +8,8 @@ $(document).ready(function() {
 	
 	//when dropdown menu value is changed submit the form
 	$('#topic_selector_dropdown').change(function() {
-		var test = $(this).val();
-		if(test != 'select') {
+		var topic = $(this).val();
+		if(topic != 'select') {
 			this.form.submit();
 		}
 	});
@@ -43,7 +43,7 @@ $(document).ready(function() {
 	
 	//when upvote button is clicked increment the rating in the database and increment the display value of rating
 	$('#up_vote').click (function() {
-		$.post('ajax.php', 
+		$.post('api/ajax.php', 
 		{
 			task : 'change_rating',
 			vote : 'up_vote',
@@ -57,7 +57,7 @@ $(document).ready(function() {
 	
 	//when downvote button is clicked decrement the rating in the database and decrement the display value of rating
 	$('#down_vote').click (function() {
-		$.post('ajax.php', 
+		$.post('api/ajax.php', 
 		{
 			task : 'change_rating',
 			vote : 'down_vote',
@@ -71,7 +71,7 @@ $(document).ready(function() {
 	
 	//populates the rating display div with the rating of the currently visiable card
 	function echo_rating() {
-		$.post('ajax.php', 
+		$.post('api/ajax.php', 
 		{
 			task : 'show_rating',
 			id : $('div.card:visible').attr('id')

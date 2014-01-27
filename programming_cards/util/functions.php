@@ -6,8 +6,16 @@
 	function initialize_database($link) {
 		$db = mysqli_query($link, 'CREATE DATABASE IF NOT EXISTS programming_cards') or die(mysqli_error($link));
 		mysqli_select_db($link, 'programming_cards') or die(mysqli_error($link));
-		mysqli_query($link, 'CREATE TABLE IF NOT EXISTS topics(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), topic VARCHAR(100) NOT NULL)') or die(mysqli_error($link));
-		mysqli_query($link, 'CREATE TABLE IF NOT EXISTS cards(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), topic INT NOT NULL, FOREIGN KEY(topic) REFERENCES topics(id), question VARCHAR(1000) NOT NULL, answer VARCHAR(1000) NOT NULL, difficulty INT NOT NULL, rating INT NOT NULL)') or die(mysqli_error($link));
+		mysqli_query($link, 'CREATE TABLE IF NOT EXISTS topics(id INT NOT NULL AUTO_INCREMENT, 
+		PRIMARY KEY(id), 
+		topic VARCHAR(100) NOT NULL)') or die(mysqli_error($link));
+		mysqli_query($link, 'CREATE TABLE IF NOT EXISTS cards(id INT NOT NULL AUTO_INCREMENT, 
+		PRIMARY KEY(id), 
+		topic INT NOT NULL, 
+		FOREIGN KEY(topic) REFERENCES topics(id), 
+		question VARCHAR(1000) NOT NULL, 
+		answer VARCHAR(1000) NOT NULL, 
+		difficulty INT NOT NULL, rating INT NOT NULL)') or die(mysqli_error($link));
 		populate_topics_table($link);
 	}
 	
