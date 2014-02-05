@@ -2,21 +2,22 @@
 <html>
 	<head>
 		<title>Programming Cards</title>
-		<link rel='stylesheet' type='text/css' href='css/upload.css'>
+		<link rel='stylesheet' type='text/css' href='../css/upload.css'>
 		<?php
-			require 'util/functions.php';
+			require '../util/functions.php';
+			require '../util/upload_util.php';
 			$link = connect();
 			$db = initialize_database($link);
 		?>
 	<head>
 
 	<body>
-		<form id='uploader' action='api/card_upload.php' method='POST'>
+		<form id='uploader' action='../api/card_upload.php' method='POST'>
 			<textarea class='card_text'id='question' name='question' required='required' placeholder='Type Question Here (Formatting here will match formatting of card)'></textarea> </br>
 			<textarea class='card_text' id='answer' name='answer' required='required' placeholder='Type Answer Here (Formatting here will match formatting of card)'></textarea> </br>
 			<label for='topic'>Topic: </label>
 			<select name='topic'>
-				<?php get_topic_options_publish($link); ?>
+				<?php get_topic_options_upload($link); ?>
 			</select> </br>
 			<label for='difficulty'>Difficulty: </label>
 			<select name='difficulty'>

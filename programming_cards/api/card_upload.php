@@ -1,9 +1,10 @@
 <?php
 	require '../util/functions.php';
+	require '../util/card_upload_util.php';
 	$link = connect();
 	$db = initialize_database($link);
 	
-	//if the upload form has submitted so that all form information was correctly recived add card to database and redirect user to index.php
+	//if the upload form has submitted so that all form information was correctly recived add card to database and redirect user to cards.php
 	if(isset($_POST['question']) && isset($_POST['answer']) && isset($_POST['topic']) && isset($_POST['difficulty'])) {
 		$question = mysqli_real_escape_string($link, $_POST['question']);
 		$answer = mysqli_real_escape_string($link, $_POST['answer']);
@@ -15,6 +16,6 @@
 		$q = 'INSERT INTO cards(topic, question, answer, difficulty) VALUES("'.$topic_id_array['id'].'", "'.$question.'", "'.$answer.'", "'.$difficulty.'")';
 		$r = mysqli_query($link, $q) or die(mysqli_error($link));
 	}
-	header('Location: ../index.php');
+	header('Location: ../pages/cards.php');
 	die();
 ?>
