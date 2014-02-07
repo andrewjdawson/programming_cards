@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<?php
-			require 'util/index_util.php';
 			require 'util/functions.php';
 			$link = connect();
 			$db = initialize_database($link);

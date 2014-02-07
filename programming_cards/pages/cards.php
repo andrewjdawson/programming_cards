@@ -3,7 +3,6 @@
 	<head>
 		<?php
 			require '../util/functions.php';
-			require '../util/cards_util.php';
 			$link = connect();
 			$db = initialize_database($link);
 			//every time this page is loaded delete all the cards with a rating of less than 5 from the database

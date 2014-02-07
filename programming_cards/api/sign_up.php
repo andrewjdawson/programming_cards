@@ -1,6 +1,5 @@
 <?php
 	require '../util/functions.php';
-	require '../util/sign_up_util.php';
 	$link = connect();
 	$db = initialize_database($link);
 

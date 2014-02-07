@@ -1,6 +1,5 @@
 <?php
 	require '../util/functions.php';
-	require '../util/card_upload_util.php';
 	$link = connect();
 	$db = initialize_database($link);
 	

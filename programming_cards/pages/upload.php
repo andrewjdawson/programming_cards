@@ -5,7 +5,6 @@
 		<link rel='stylesheet' type='text/css' href='../css/upload.css'>
 		<?php
 			require '../util/functions.php';
-			require '../util/upload_util.php';
 			$link = connect();
 			$db = initialize_database($link);
 		?>

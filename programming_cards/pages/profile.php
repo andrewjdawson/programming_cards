@@ -6,7 +6,6 @@
 		header('Location: ../index.php');
 	}
 	require '../util/functions.php';
-	require '../util/profile_util.php';
 ?>
 <!DOCTYPE html>
 <html>
